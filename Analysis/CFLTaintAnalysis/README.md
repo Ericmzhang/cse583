@@ -1,0 +1,1 @@
+A modified version of LLVM-8's [CFLAndersAliasAnalysis](https://github.com/llvm/llvm-project/blob/release/8.x/llvm/lib/Analysis/CFLAndersAliasAnalysis.cpp) that compute all aliases of selected pointers in a demand-driven manner. 
