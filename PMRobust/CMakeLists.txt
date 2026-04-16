@@ -9,6 +9,8 @@ include(AddLLVM)
 add_definitions(${LLVM_DEFINITIONS})
 include_directories(${LLVM_INCLUDE_DIRS})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../SpecPMTRuntime)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../SpecPMTRuntime/include)
 
 # 1. Include the necessary LLVM components
 set(LLVM_LINK_COMPONENTS 
@@ -23,6 +25,8 @@ set(LLVM_LINK_COMPONENTS
 # 2. Add the library
 add_llvm_library(libPMRobustness MODULE BUILDTREE_ONLY
   PMRobustness.cpp
+  specPMT.cpp
+  ../SpecPMTRuntime/src/pm_runtime.cpp
   ../Analysis/CFLTaintAnalysis/CFLAndersTaintAnalysis.cpp
   ../Analysis/CFLTaintAnalysis/CFLGraph.cpp 
   ../Analysis/CFLTaintAnalysis/AliasAnalysisSummary.cpp  
