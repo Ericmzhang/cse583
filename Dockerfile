@@ -10,5 +10,6 @@ RUN apt-get update && apt-get install -y \
     cmake \
     make \
     g++
+RUN apt-get install -y zlib1g-dev
 
 WORKDIR /project
